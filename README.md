@@ -1,2 +1,19 @@
 # aws-serverless-deployment
 serverless deployment using aws lambda
+
+Code to deploy a torch scripted Resnet18 model on Cifar10 data
+
+Link to the App deployed : https://vignesh-cifar10-serverless.vercel.app/ 
+
+Repo to the FrontEnd serverless code : https://github.com/vigneshbabupj/emlov2-serverless 
+
+Lambda URL of the deployment: https://hibvl4satl.execute-api.ap-south-1.amazonaws.com/dev/inference 
+
+Example to test the deployed url
+```bash
+curl --location --request POST 'https://hibvl4satl.execute-api.ap-south-1.amazonaws.com/dev/inference' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "body": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCAAgACADASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwDzzVdNm0K+k0px5s6ygZB4DY6frXT6FPbPLax6lpYaKNcPsfLN65B61cvfCWoeK/GWrTW21IoZmk+0sPlZ8cJn+dZs1zFpqyWcysuorIA6EcgjjFc0qzaS6nTRoUp3T3PQdU0rwqdME0dok3yZ2hdrAelZnh+y8J6vcyWyaSFuI1LNv5GK5XUNadZUEfBjOSOv4UngK8e5+IbCKXMRhkOexAA/rXPabi3cvEUKNOnpue3wy28MbJBGg3sZGVFA5PUn615j4s0W0u/inom1jEt+HM0inBDKOo98YrtI9WthEEdWDNx8npXL+JNJOsavbT/6uOCKQJIGw6OSNpX0xiopLlldnmQqOLumXbP4eaLpmsLqEt3PdurblWZgVB9SO9c7ounR2l1pV7HNGvkaxcWmR/HC5bAPr8wrbtri8i0tEv7qOS4RMGbPJ9zWdBpcVvYW8H2jdFDc/aAznB353f1NWubXmf8AWoOo3uz/2Q=="
+}'
+```
