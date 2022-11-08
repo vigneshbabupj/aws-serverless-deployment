@@ -1,0 +1,16 @@
+service: serverless-cifar10
+ 
+provider:
+  name: aws #cloud provider
+  region: ap-south-1 #region (mumbai)
+  memorySize: 512 #memory usage
+  timeout: 300 
+ 
+functions:
+  cifar10:
+    image: 787871529275.dkr.ecr.ap-south-1.amazonaws.com/cifar10-serverless-lambda:latest 
+    events:
+      - http:
+          path: inference 
+          method: post 
+          cors: true
